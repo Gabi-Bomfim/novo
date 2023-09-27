@@ -1,11 +1,11 @@
 // Seleciona os radio buttons
-const radioCartaoCredito = document.getElementById("Cartão de Crédito");
-const radioCartaoDebito = document.getElementById("Cartão de Débito");
+const radioCartaoCredito = document.getElementById("cartaoCredito");
+const radioCartaoDebito = document.getElementById("cartaoDebito");
 const cartaoForm = document.getElementById("cartaoForm");
 
 // Adiciona um evento de escuta para os radio buttons
 radioCartaoCredito.addEventListener("change", function () {
-    if (this.checked) {
+    if (this.checked || radioCartaoDebito.checked) {
         cartaoForm.classList.remove("hidden");
     } else {
         cartaoForm.classList.add("hidden");
@@ -13,9 +13,11 @@ radioCartaoCredito.addEventListener("change", function () {
 });
 
 radioCartaoDebito.addEventListener("change", function () {
-    if (this.checked) {
+    if (this.checked || radioCartaoCredito.checked) {
         cartaoForm.classList.remove("hidden");
     } else {
         cartaoForm.classList.add("hidden");
     }
 });
+
+

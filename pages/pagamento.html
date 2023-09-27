@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/pagamento.css">
-<link rel="stylesheet" href="/css/carrossel.css">
-
-
-
+<link rel="stylesheet" href="../css/pagamento.css">
+<link rel="stylesheet" href="../css/carrossel.css">
     <title>Pagamento</title>
 </head>
+
 <body>
+
+
+<form>
     <section id="carousel" class="">
         <div class="slides">
-        <!--BOTÃO RADIUS-->
         <input type="radio" name="radio-btn" id="radio1">
         <input type="radio" name="radio-btn" id="radio2">
         <input type="radio" name="radio-btn" id="radio3">
@@ -21,16 +21,16 @@
     
         <!--SLIDE DE IMAGENS-->
         <div class="slide first">
-            <img src="/images/banner1.png" alt=" planos mensais">
+            <img src="/novo/images/banner1.png" alt=" planos mensais">
         </div>
         <div class="slide">
-            <img src="/images/banner2.png" alt="oferta de diferentes modalidades ded treino">
+            <img src="novo/images/banner2.png" alt="oferta de diferentes modalidades ded treino">
         </div>
         <div class="slide">
-            <img src="/images/banner3.png" alt="blog da academia">
+            <img src="novo/images/banner3.png" alt="blog da academia">
         </div>
         <div class="slide">
-            <img src="/images/banner4.png" alt=" planos para atletas de elite">
+            <img src="novo/images/banner4.png" alt=" planos para atletas de elite">
         </div>
     
     
@@ -52,94 +52,104 @@
         </div>
         </div>
     </section>
+    
+    <section> <!-- Abra a tag <section> para a seção de pagamento -->
 
+        <!-- Conteúdo do pagamento aqui -->
 
-    <div id="cartaoForm" class="hidden">
-        <!-- Formulário de dados do cartão aqui -->
-        <h2>Dados do Cartão</h2>
-    
-        <div class="form-group">
-            <label for="Número do Cartão">Número do Cartão</label>
-            <input class="form-control" type="string" name="Número do Cartão" placeholder="0000 0000 0000 0000" required maxlength="20">
-        </div>
-    
-        <div class="form-group">
-            <label for="Número do Cartão">Validade</label>
-            <input class="form-control" type="date" name="Validade">
-        </div>
-    
-        <div class="form-group">
-            <label for="CVC">CVC</label>
-            <input class="form-control" type="number" name="CVC" placeholder="000" required maxlength="3">
-        </div>
-    
-        <label for="nome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="nome" autofocus placeholder="NOME COMO ESCRITO NO CARTÃO" maxlength="50">
-    
-        <div class="form-group">
-            <label for="CPF">CPF</label>
-            <input class="form-control" type="string" name="CPF" placeholder="651.194.100-06" required maxlength="14">
-        </div>
-    </div>
-    
-    <!-- <div class="form-container container mx-auto my-5 col-md-6">
-        <h2>Pagamento</h2>
+        <h1>Escolha o método de pagamento:</h1>
 
-        <div>
-            <fieldset>
-            <label>Selecione a forma de pagamento:</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="Cartão de Crédito" id="Cartão de Crédito" value="Cartão de Crédito">
-                <label class="form-check-label" for="masculino">Cartão de Crédito</label>
+        <input type="radio" name="metodoPagamento" id="pix">
+        <label for="pix" onclick="alternarFormulario('pix')">Pix</label>
+
+        <input type="radio" name="metodoPagamento" id="cartaoCredito">
+        <label for="cartaoCredito" onclick="alternarFormulario('cartaoCreditoForm')">Cartão de Crédito</label>
+
+        <input type="radio" name="metodoPagamento" id="cartaoDebito">
+        <label for="cartaoDebito" onclick="alternarFormulario('cartaoDebitoForm')">Cartão de Débito</label>
+
+        <!-- Formulário de dados do cartão de crédito -->
+        <div id="cartaoCreditoForm" class="hidden">
+            <h2>Dados do Cartão de Crédito</h2>
+            <div class="form-group">
+                <label for="Número do Cartão">Validade</label>
+                <input class="form-control" type="date" name="Validade">
+            </div>
+        
+            <div class="form-group">
+                <label for="CVC">CVC</label>
+                <input class="form-control" type="number" name="CVC" placeholder="000" required maxlength="3">
+            </div>
+        
+            <label for="nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="nome" autofocus placeholder="NOME COMO ESCRITO NO CARTÃO" maxlength="50">
+        
+            <div class="form-group">
+                <label for="CPF">CPF</label>
+                <input class="form-control" type="string" name="CPF" placeholder="651.194.100-06" required maxlength="14">
             </div>
 
-        <div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="Cartão de Débito" id="Cartão de Débito" value="Cartão de Débito">
-                <label class="form-check-label" for="masculino">Cartão de Débito</label>
+        </div>
+
+        <!-- Formulário de dados do cartão de débito -->
+        <div id="cartaoDebitoForm" class="hidden">
+            <h2>Dados do Cartão de Débito</h2>
+            <div class="form-group">
+                <label for="Número do Cartão">Validade</label>
+                <input class="form-control" type="date" name="Validade">
+            </div>
+        
+            <div class="form-group">
+                <label for="CVC">CVC</label>
+                <input class="form-control" type="number" name="CVC" placeholder="000" required maxlength="3">
+            </div>
+        
+            <label for="nome">Nome</label>
+            <input class="form-control" type="text" name="nome" id="nome" autofocus placeholder="NOME COMO ESCRITO NO CARTÃO" maxlength="50">
+        
+            <div class="form-group">
+                <label for="CPF">CPF</label>
+                <input class="form-control" type="string" name="CPF" placeholder="651.194.100-06" required maxlength="14">
             </div>
 
-        <div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="PIX" id="PIX" value="PIX">
-                <label class="form-check-label" for="PIX">PIX</label>
+        </div>
+
+        <!-- Formulário do Pix -->
+        <div id="pixForm" class="hidden">
+            <h2>QR Code do Pix</h2>
+            <div id="pixForm" class="hidden">
+            <h2>Dados do Pix</h2>
+
+            <div class="form-group">
+                <label for="chavePix">Chave Pix</label>
+                <input class="form-control" type="text" id="chavePix" name="chavePix" placeholder="Digite sua chave Pix" required maxlength="50">
             </div>
 
-        <H2>Dados do Cartão</H2>
-
-        <div class="form-group">
-            <label for="Número do Cartão">Número do Cartão</label>
-            <input class="form-control" type="string" name="Número do Cartão" placeholder="0000 0000 0000 0000" required maxlength="20">
+            <h3>QR Code do Pix</h3>
+            <div id="qrcode">
+                <img src="caminho/para/seu/qrcode.png" alt="QR Code do Pix">
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="Número do Cartão">Validade</label>
-            <input class="form-control" type="date" name="Validade">
         </div>
 
-        <div class="form-group">
-            <label for="CVC">CVC</label>
-            <input class="form-control" type="number" name="CVC" placeholder="000" required maxlength="3">
-        </div>
+        <!-- Botão de concluir pagamento aqui -->
 
-        <label for="nome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="nome" autofocus placeholder="NOME COMO ESCRITO NO CARTÃO"
-        maxlength="50">
+    </section> <!-- Feche a tag <section> para a seção de pagamento -->
 
-        <div class="form-group">
-            <label for="CPF">CPF</label>
-            <input class="form-control" type="string" name="CPF" placeholder="651.194.100-06" required maxlength="14">
-        </div> -->
-<br> <br>
-        <div>
-            <button class="btn btn-success" id="Concluir pagamento" onclick="msg()">Concluir pagamento</button>
-            <div id="mensagem">Esse botão funciona! Obrigada por tentar.</div>
-        </div>
-        </form>
-    </div>
+    <!-- Seus scripts e o restante do HTML aqui -->
 
-    <script src="/script/pagamento.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        function alternarFormulario(formId) {
+            const formulario = document.getElementById(formId);
+            if (formulario) {
+                const formularios = document.querySelectorAll('.hidden');
+                formularios.forEach(form => {
+                    form.classList.add('hidden');
+                });
+                formulario.classList.remove("hidden");
+            }
+        }
+    </script>
 </body>
 </html>
