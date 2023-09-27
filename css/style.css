@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&family=Poppins:wght@200;300;600;800&display=swap');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+
+    font-family: -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+header {
+    background: white;
+    height: auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+h1 img {
+    width: 60px;
+}
+
+
+/*MENU BAR*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav ul a {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500px;
+    color: black;
+    transition: 0.5s;
+}
+
+nav ul li {
+    padding: 20px;
+}
+
+
+nav li {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+nav ul a:hover {
+    transition: 0.5s;
+    color: #11d8be;
+}
+
+
+nav ul li::after {
+    /*linha do hover*/
+    display: block;
+    content: '';
+    width: 0%;
+    background-color: #11d8be;
+    transition: 0.5s;
+    height: 2px;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/*FOOTER */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.footer {
+    background-color: #b9aba18c;
+    padding: 50px 10px 20px 10px;
+}
+
+.footer p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-coluna {
+    width: 25%;
+    padding: 10px 80px;
+}
+
+.footer-coluna h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-coluna h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #11d8be;
+    height: 2px;
+    box-sizing: border-box;
+    width: 80px;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-coluna ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-coluna ul li a {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-coluna ul li a:hover {
+    color: #11d8be;
+    padding-left: 8px;
+}
+
+.footer-coluna .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-coluna .social-links a:hover {
+    color: #11d8be;
+    background-color: black;
+}
+
+#mensagem {
+    transition: all 0.52s;
+    background: #FFF;
+    border: #777 solid 1px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .52);
+    border-radius: 20px;
+    position: fixed;
+    top: -200px;
+    width: 20%;
+    padding: 25px 10px;
+    text-align: center;
+    left: 40%;
+    opacity: 0;
+
+}
+
+#mensagem.ver {
+    top: 200px;
+    opacity: 1;
+}
+
+.formulario #mensagem {
+width: 40%;
+}
+
+.formulario #mensagem.ver {
+    top: 300px;
+    opacity: 1;
+    z-index: 100
+}
+
